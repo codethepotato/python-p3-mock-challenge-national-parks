@@ -4,6 +4,17 @@ class NationalPark:
         self.name = name
         self._trips = []
         self._visitors = []
+
+    @property
+    def name(self):
+        return self._name 
+    
+    @name.setter
+    def name(self, value):
+        if hasattr(self, '_name'):
+            raise Exception("Name cannot be changed!")
+        else:
+            self._name = value
         
     def trips(self, new_trip=None):
         from classes.trip import Trip
@@ -18,3 +29,4 @@ class NationalPark:
     
     def best_visitor(self):
         pass
+
